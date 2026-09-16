@@ -1,13 +1,39 @@
 #pragma once
+#include <random>
+#include <stdexcept>
 
 struct Task {
 private:
-	double _first_number;
-	double _second_number;
+	const int _default_min = 1;
+	const int _default_max = 100;
+
+	int _num_1;
+	int _num_2;
 	char _operation;
 	double _result;
 
 public:
 	Task();
-	Task(double bot_of_diaposone, double top_of_diaposone, char operation = '+');
+	Task(int min, int max, char operation = '?');
+
+	inline int get_num_1() const;
+	inline int get_num_2() const;
+	inline char get_operation() const;
+	inline double get_result() const;
 };
+
+inline int Task::get_num_1() const {
+	return _num_1;
+}
+
+inline int Task::get_num_2() const {
+	return _num_2;
+}
+
+inline char Task::get_operation() const {
+	return _operation;
+}
+
+inline double Task::get_result() const {
+	return _result;
+}
