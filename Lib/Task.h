@@ -20,6 +20,9 @@ public:
 	inline int get_num_2() const noexcept;
 	inline char get_operation() const noexcept;
 	inline double get_result() const noexcept;
+
+private:
+	inline double round_to_2() const noexcept;
 };
 
 inline int Task::get_num_1() const noexcept {
