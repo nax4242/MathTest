@@ -24,9 +24,9 @@ public:
 	~MathTest();
 
 	void run();
-	void show_statistics() const noexcept;
 
 private:
 	inline bool is_correct(double user_answer, double real_answer) const noexcept;
 	inline int calculate_percentage() const noexcept;
+	void show_statistics() const noexcept;
 };

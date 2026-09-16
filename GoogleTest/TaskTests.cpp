@@ -1,6 +1,10 @@
 #include "pch.h"
 #include "Task.h"
 
+inline double round_to_2(int _num_1, int _num_2) noexcept {
+	return std::floor((static_cast<double>(_num_1) / _num_2) * 100 + 1e-9) / 100;
+}
+
 TEST(TaskTests, DefaultConstructorTest) {
 	Task t;
 
@@ -37,7 +41,7 @@ TEST(TaskTests, InitConstructorTestWithDivision) {
 
 	EXPECT_TRUE(t.get_num_1() >= 100 && t.get_num_2() <= 200 && t.get_num_2() >= 100 && t.get_num_2() <= 200);
 	EXPECT_TRUE(t.get_operation() == '/');
-	EXPECT_TRUE(t.get_result() == static_cast<double>(t.get_num_1()) / t.get_num_2());
+	EXPECT_TRUE(t.get_result() == round_to_2(t.get_num_1(), t.get_num_2()));
 }
 
 TEST(TaskTests, InitConstructorTestThrowInvalidOperation) {
@@ -75,7 +79,7 @@ TEST(TaskTests, ResultMatchesOperationWithDefaultConstructor) {
 			break;
 		case '/':
 			ASSERT_NE(n2, 0);
-			EXPECT_DOUBLE_EQ(t.get_result(), static_cast<double>(n1) / n2);
+			EXPECT_DOUBLE_EQ(t.get_result(), round_to_2(n1, n2));
 			break;
 		}
 	}
@@ -101,7 +105,7 @@ TEST(TaskTests, ResultMatchesOperationWithInitConstructor) {
 			break;
 		case '/':
 			ASSERT_NE(n2, 0);
-			EXPECT_DOUBLE_EQ(t.get_result(), static_cast<double>(n1) / n2);
+			EXPECT_DOUBLE_EQ(t.get_result(), round_to_2(n1, n2));
 			break;
 		}
 	}
