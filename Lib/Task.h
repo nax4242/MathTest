@@ -16,24 +16,24 @@ public:
 	Task();
 	Task(int min, int max, char operation = '?');
 
-	inline int get_num_1() const;
-	inline int get_num_2() const;
-	inline char get_operation() const;
-	inline double get_result() const;
+	inline int get_num_1() const noexcept;
+	inline int get_num_2() const noexcept;
+	inline char get_operation() const noexcept;
+	inline double get_result() const noexcept;
 };
 
-inline int Task::get_num_1() const {
+inline int Task::get_num_1() const noexcept {
 	return _num_1;
 }
 
-inline int Task::get_num_2() const {
+inline int Task::get_num_2() const noexcept {
 	return _num_2;
 }
 
-inline char Task::get_operation() const {
+inline char Task::get_operation() const noexcept {
 	return _operation;
 }
 
-inline double Task::get_result() const {
+inline double Task::get_result() const noexcept {
 	return _result;
 }
