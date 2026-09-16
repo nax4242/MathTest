@@ -4,8 +4,8 @@
 
 struct Task {
 private:
-	const int _default_min = 1;
-	const int _default_max = 100;
+	static constexpr int _default_min = 1;
+	static constexpr int _default_max = 100;
 
 	int _num_1;
 	int _num_2;
@@ -20,8 +20,6 @@ public:
 	inline int get_num_2() const noexcept;
 	inline char get_operation() const noexcept;
 	inline double get_result() const noexcept;
-
-	Task& operator=(const Task& other);
 };
 
 inline int Task::get_num_1() const noexcept {

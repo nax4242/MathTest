@@ -111,15 +111,3 @@ Task::Task(int min, int max, char operation) {
 
 	}
 }
-
-Task& Task::operator=(const Task& other) {
-
-	if (this == &other) return *this;
-
-	_num_1 = other._num_1;
-	_num_2 = other._num_2;
-	_operation = other._operation;
-	_result = other._result;
-
-	return *this;
-}
