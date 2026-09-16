@@ -29,7 +29,7 @@ Task::Task() {
 			_num_2 = dist_for_numbers(gen);
 		}
 
-		_result = static_cast<double>(_num_1) / _num_2;
+		_result = std::floor((static_cast<double>(_num_1) / _num_2) * 100 + 1e-9) / 100;
 		break;
 	}
 }
@@ -78,7 +78,7 @@ Task::Task(int min, int max, char operation) {
 				_num_2 = dist_for_numbers(gen);
 			}
 
-			_result = static_cast<double>(_num_1) / _num_2;
+			_result = std::floor((static_cast<double>(_num_1) / _num_2) * 100 + 1e-9) / 100;
 			break;
 		}
 
@@ -105,7 +105,7 @@ Task::Task(int min, int max, char operation) {
 				_num_2 = dist_for_numbers(gen);
 			}
 
-			_result = static_cast<double>(_num_1) / _num_2;
+			_result = std::floor((static_cast<double>(_num_1) / _num_2) * 100 + 1e-9) / 100;
 			break;
 		}
 
