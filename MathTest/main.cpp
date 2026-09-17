@@ -1,6 +1,8 @@
 #include <iostream>
+#include "MathTest.h"
 
 int main() {
-	std::cout << "Hello world";
+	MathTest test(5, 0, 5, '/');
+	test.run();
 	return 0;
 }
