@@ -8,7 +8,7 @@ MathTest::MathTest(int count_of_tasks) {
 }
 
 MathTest::MathTest(int count_of_tasks, int min, int max) {
-	_tasks = new Task[count_of_tasks]; //Не удачная реализация
+	_tasks = new Task[count_of_tasks];
 
 	for (int i = 0; i < count_of_tasks; i++) {
 		_tasks[i] = Task(min, max);
@@ -20,7 +20,7 @@ MathTest::MathTest(int count_of_tasks, int min, int max) {
 }
 
 MathTest::MathTest(int count_of_tasks, int min, int max, char operation) {
-	_tasks = new Task[count_of_tasks]; //Не удачная реализация
+	_tasks = new Task[count_of_tasks];
 
 	for (int i = 0; i < count_of_tasks; i++) {
 		_tasks[i] = Task(min, max, operation);
